@@ -1,6 +1,11 @@
 import xmltodict
 import json
 from json2table import convert as j2tconvert
+from json2xml import json2xml, readfromurl, readfromstring, readfromjson
+
+
+def json_to_xml(json_obj):
+    print(json2xml.Json2xml(json_obj).to_xml())
 
 
 def xml_to_json(string):
@@ -16,15 +21,5 @@ def json_to_table(json_obj):
 
 
 # print(xml_to_json('<e> <a>text</a> <a>text</a> </e>'))
-print(json_to_table(
-    {"menu": {
-        "id": "file",
-        "value": "File",
-        "menuitem": [
-            {"value": "New", "onclick": "CreateNewDoc()"},
-            {"value": "Open", "onclick": "OpenDoc()"},
-            {"value": "Close", "onclick": "CloseDoc()"}
-        ]
-    }
-    }
-))
+# print(json_to_table({"menu": {"id": "file","value": "File","menuitem": [{"value": "New", "onclick": "CreateNewDoc()"},{"value": "Open", "onclick": "OpenDoc()"},{"value": "Close", "onclick": "CloseDoc()"}]}}))
+# json_to_xml({"id":26077,"username":"vinitcool76","name":"Vinit Kumar","location":"Pune, India","karma":1136,"accounts":{"github":"vinitkumar","twitter":"vinitkme"},"about":"Love programming, good coffee and life. I support OSS, creativity and freedom.\n\n\n[LinkedIn](http://www.linkedin.com/pub/vinit-kumar/10/1a9/2b1) [Blog](http://vinitkumar.me) [Bitbucket](https://bitbucket.org/vinitkme) [StackOverflow](http://stackoverflow.com/users/859112)\n\n","title":"Software Engineer","company":"Changer Technologies","team":10202,"thumbnail":"https://coderwall-assets-0.s3.amazonaws.com/uploads/user/avatar/26077/0474e465f54e54cc1225d67dfd5d9be5.jpeg","endorsements":1136,"specialities":[],"badges":[{"name":"T-Rex","description":"Have at least one original repo where C is the dominant language","created_at":"2014-07-14T18:36:37.622Z","badge":"https://dj1symwmxvldi.cloudfront.net/assets/badges/trex-df49b8b38c5acaba1820ba0cd9a6fb013538206c027170298ec3b89ed33b059d.png"},{"name":"Octopussy","description":"Have a repo followed by a member of the GitHub team","created_at":"2014-04-26T11:33:48.296Z","badge":"https://dj1symwmxvldi.cloudfront.net/assets/badges/octopussy-751c849dad4adc53baa5c9f9f269a5e3810f8d8b85d348f1c629e0e8fea26ef9.png"},{"name":"24PullRequests Participant","description":"Sent at least one pull request during the first 24 days of December 2013","created_at":"2013-12-26T20:18:11.113Z","badge":"https://dj1symwmxvldi.cloudfront.net/assets/badges/24-participant-ad8a69df3cae1df0ca79950239cecd901ba6952c52b9ab2c6bb6d111ef907d32.png"},{"name":"Walrus","description":"The walrus is no stranger to variety. Use at least 4 different languages throughout all your repos","created_at":"2013-09-26T21:25:43.480Z","badge":"https://dj1symwmxvldi.cloudfront.net/assets/badges/walrus-1f517cbbd8f030099b8386c53d4ee40fece3fa146b6362accb3abddb436482cb.png"},{"name":"Philanthropist","description":"Truly improve developer quality of life by sharing at least 50 individual open source projects","created_at":"2013-09-26T21:25:40.377Z","badge":"https://dj1symwmxvldi.cloudfront.net/assets/badges/philanthropist-e34b034d62cd2d6ac58047fef0d94b5f203d416dd6a8f344f9d94c07d71b8dab.png"},{"name":"Forked","description":"Have a project valued enough to be forked by someone else","created_at":"2013-09-26T21:25:36.859Z","badge":"https://dj1symwmxvldi.cloudfront.net/assets/badges/forked1-63f23ad054823f6065b4526f8552dbc2c4fbaa75d22db7150d700201218ac426.png"},{"name":"Charity","description":"Fork and commit to someone's open source project in need","created_at":"2013-09-26T21:25:32.805Z","badge":"https://dj1symwmxvldi.cloudfront.net/assets/badges/charity-bab6d575c53894cc9e395db7cdb1f0f91f176fa0cc8122c5f824e672f3d556a4.png"},{"name":"Python 3","description":"Have at least three original repos where Python is the dominant language","created_at":"2013-09-26T21:25:27.535Z","badge":"https://dj1symwmxvldi.cloudfront.net/assets/badges/python3-355595aad795b512954169cb5ac4dbd80454a302a3b891581faa58b988650a46.png"},{"name":"Python","description":"Would you expect anything less? Have at least one original repo where Python is the dominant language","created_at":"2013-09-26T21:25:22.724Z","badge":"https://dj1symwmxvldi.cloudfront.net/assets/badges/python-df746136c133c10a796100239e3563e3419fb4d5a7b8cc9bed181c941f6dbf55.png"},{"name":"Cub","description":"Have at least one original jQuery or Prototype open source repo","created_at":"2013-09-26T21:25:19.651Z","badge":"https://dj1symwmxvldi.cloudfront.net/assets/badges/cub-d811dfda174e9ca232964477c16369e9ed8caf4a47d746348a358f3579b8ffdc.png"},{"name":"Honey Badger","description":"Have at least one original Node.js-specific repo","created_at":"2013-09-26T21:25:16.427Z","badge":"https://dj1symwmxvldi.cloudfront.net/assets/badges/honeybadger-e6a507524dd5b8b273f39b437d9da1c1bbbb434a59a060a1fe67e3ad83736261.png"},{"name":"Raven","description":"Have at least one original repo where some form of shell script is the dominant language","created_at":"2013-09-26T21:25:10.927Z","badge":"https://dj1symwmxvldi.cloudfront.net/assets/badges/raven-35923a69492045dffe4dfe0d7ebf31da4e76efabbbdaa090acd59d17debb3087.png"},{"name":"Altruist","description":"Increase developer well-being by sharing at least 20 open source projects","created_at":"2013-01-09T12:03:23.766Z","badge":"https://dj1symwmxvldi.cloudfront.net/assets/badges/altrustic-fea3bde05a17a18ff6420dbd7a646cc4536c51f46db27536401e56bee0dc086a.png"}]})
